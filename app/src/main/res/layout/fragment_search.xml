@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F8F8F8"
+        android:background="@color/main_background_color"
         tools:context=".ui.fragments.searchfragment.SearchFragment">
 
         <ProgressBar
@@ -18,10 +18,57 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:visibility="gone"
+            android:indeterminateTint="@color/secondary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            style="@style/RoundedTextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/leftRightMargin"
+            android:layout_marginTop="@dimen/topEndMargin"
+            android:layout_marginEnd="@dimen/leftRightMargin"
+            android:hint="@string/github_username_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:fontFamily="@font/mark_pro"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/leftRightMargin"
+            android:alpha="1"
+            android:backgroundTint="@color/transparent_white"
+            android:src="@drawable/ic_search_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/outlinedTextField"
+            app:layout_constraintEnd_toEndOf="@+id/outlinedTextField"
+            app:layout_constraintTop_toTopOf="@+id/outlinedTextField"
+            android:contentDescription="@string/search_button_descr" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repositories_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/leftRightMargin"
+            android:layout_marginTop="@dimen/topEndMargin"
+            android:layout_marginEnd="@dimen/leftRightMargin"
+            android:layout_marginBottom="@dimen/topEndMargin"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outlinedTextField" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

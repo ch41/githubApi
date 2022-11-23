@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Github</string>
+    <string name="github_username_label">Username</string>
+    <string name="search_button_descr">search button</string>
 </resources>

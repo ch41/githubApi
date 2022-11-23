@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="leftRightMargin">16dp</dimen>
+    <dimen name="topEndMargin">8dp</dimen>
+    <dimen name="cornerRadius">32dp</dimen>
+
+</resources>
