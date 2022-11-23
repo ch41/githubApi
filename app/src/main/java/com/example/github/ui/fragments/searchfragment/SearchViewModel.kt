@@ -36,7 +36,7 @@ class SearchViewModel @Inject constructor(
                     Log.d("asd", "getRepositories: ${resource.data} ")
                 }
             }
-        }.launchIn(viewModelScope + job)
+        }.launchIn(viewModelScope)
     }
 
 }

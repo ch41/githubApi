@@ -48,7 +48,6 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/leftRightMargin"
-            android:alpha="1"
             android:backgroundTint="@color/transparent_white"
             android:src="@drawable/ic_search_icon"
             app:layout_constraintBottom_toBottomOf="@+id/outlinedTextField"

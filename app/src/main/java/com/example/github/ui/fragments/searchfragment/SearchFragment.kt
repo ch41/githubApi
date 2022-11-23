@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.github.databinding.FragmentSearchBinding
 import com.example.github.ui.fragments.basefragment.BaseFragment
+import com.example.github.ui.fragments.searchfragment.adapter.SearchFragmentAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -37,6 +38,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         val (repositories, isLoading, isError) = viewState
         binding.isLoadingProgressBar.isVisible = isLoading
         if(isError.isNotEmpty()) Toast.makeText(requireContext(), isError, Toast.LENGTH_SHORT).show()
+        val adapter = SearchFragmentAdapter()
+        adapter.submitList(repositories)
+        binding.repositoriesRecyclerView.adapter = adapter
     }
 
     override fun initBinding(
