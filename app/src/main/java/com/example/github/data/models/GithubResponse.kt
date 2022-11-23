@@ -1,5 +1,3 @@
 package com.example.github.data.models
 
-data class GithubResponse(
-    val reposList: List<GithubResponseItem>
-)
+class GithubResponse : ArrayList<RepositoryResponse>()
