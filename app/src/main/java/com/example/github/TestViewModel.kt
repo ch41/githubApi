@@ -27,28 +27,6 @@ class TestViewModel @Inject constructor(
         }
     }
 
-    fun download(downloadManager: DownloadManager) {
-        viewModelScope.launch {
-            githubService.getRepositoriesByUsername("Ch41")
-
-            val file =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-
-            file.mkdirs()
-            val destination = Uri.fromFile(File(file, "pizda.zip"))
-            val dm =
-                DownloadManager.Request("https://codeload.github.com//ch41/BusinessCardApp/zip/master".toUri())
-                    .setTitle("Pizda")
-                    .setDescription("downloading...")
-                    .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-                    .setAllowedOverMetered(true)
-                    .setDestinationUri(destination)
-
-
-            downloadManager.enqueue(dm)
-
-        }
-    }
 
 
 }

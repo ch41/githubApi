@@ -9,12 +9,13 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/repos_card_view"
         android:layout_width="match_parent"
         app:cardBackgroundColor="@color/white"
         android:layout_height="64dp"
         app:cardElevation="2dp"
         app:cardCornerRadius="16dp"
-        android:layout_margin="8dp">
+        android:layout_margin="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,12 +32,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintEnd_toStartOf="@+id/download_repos_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/download_repos_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"

@@ -1,6 +1,5 @@
-package com.example.github.domain.use_case
+package com.example.github.domain.usecase
 
-import com.example.github.domain.models.Github
 import com.example.github.domain.models.Repository
 import com.example.github.domain.repository.GithubRemoteRepository
 import com.example.github.utils.Resource

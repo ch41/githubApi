@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.example.github.utils.hideKeyboard
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
@@ -27,6 +28,9 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    fun hideKeyboard() {
+        view?.let { activity?.hideKeyboard(it) }
     }
 
 }

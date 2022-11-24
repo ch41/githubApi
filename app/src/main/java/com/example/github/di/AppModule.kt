@@ -22,4 +22,5 @@ object AppModule {
 //        dispatchers: Dispatchers
     ): GithubRemoteRepository =
         GithubRemoteRepositoryImpl(githubService )
+
 }

@@ -17,7 +17,7 @@
             android:id="@+id/is_loading_progress_bar"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:indeterminateTint="@color/secondary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,13 +38,18 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_text_input"
                 android:layout_width="match_parent"
+                android:maxLines="1"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
                 android:fontFamily="@font/mark_pro"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/leftRightMargin"

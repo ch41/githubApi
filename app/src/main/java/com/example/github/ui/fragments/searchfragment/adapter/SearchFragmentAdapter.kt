@@ -9,8 +9,8 @@ import com.example.github.domain.models.Repository
 
 
 class SearchFragmentAdapter(
-//    val addCurrencyToFavorite: () -> Unit,
-//    val deleteFromFavorites: () -> Unit
+    val downloadRepository: (title: String, description: String?, fullName: String, defaultBranch: String) -> Unit,
+    val navigateToWebView: (url: String) -> Unit
 ) : ListAdapter<Repository, SearchFragmentAdapter.SearchViewHolder>(SearchDiffUtils()) {
 
 
@@ -20,14 +20,20 @@ class SearchFragmentAdapter(
 
 
         fun bind(repository: Repository) {
-            val (fullName, htmlUrl, id, name, url) = repository
+            val (fullName, htmlUrl, id, name, url, description, defaultBranch) = repository
             with(binding) {
                 this.entity = repository
+                this.downloadReposButton.setOnClickListener {
+                    downloadRepository(name, description, fullName, defaultBranch)
+                }
+                this.reposCardView.setOnClickListener {
+                    navigateToWebView(htmlUrl)
+                }
             }
-
         }
 
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         return SearchViewHolder(
             RepositoryItemBinding.inflate(

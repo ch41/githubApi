@@ -13,4 +13,8 @@ data class RepositoryResponse(
     val name: String,
     @SerializedName("url")
     val url: String,
+    @SerializedName("description")
+    val description: String?,
+    @SerializedName("default_branch")
+    val defaultBranch: String,
 )
