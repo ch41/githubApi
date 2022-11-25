@@ -26,7 +26,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         downloadManager =
             requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
 
@@ -46,7 +45,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
                 updateUi(state)
             }
         }
-
     }
 
     private fun updateUi(repositoriesState: RepositoriesState) {
@@ -67,7 +65,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
                 )
             },
             navigateToWebView = { url ->
-                Log.d("asd", "updateUi: $url ")
                 val action = SearchFragmentDirections.actionSearchFragmentToWebViewFragment(url)
                 findNavController().navigate(action)
             }

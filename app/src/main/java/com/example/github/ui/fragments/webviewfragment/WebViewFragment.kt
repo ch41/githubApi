@@ -21,12 +21,7 @@ import com.example.github.ui.MainActivity
 class WebViewFragment : Fragment() {
 
     private lateinit var binding: FragmentWebViewBinding
-
     private val args: WebViewFragmentArgs by navArgs()
-
-    companion object {
-        const val MAX_PROGRESS = 100
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,9 +29,8 @@ class WebViewFragment : Fragment() {
     ): View {
         binding = FragmentWebViewBinding.inflate(inflater)
         initWebView()
-        setWebClient()
-        loadUrl(args.url)
-        binding.webView.canGoBack()
+        binding.webView.loadUrl(args.url)
+
         binding.webView.setOnKeyListener { _, keyCode, event ->
            if (event.action != KeyEvent.ACTION_DOWN)
             if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -70,23 +64,4 @@ class WebViewFragment : Fragment() {
         }
     }
 
-    private fun setWebClient() {
-        binding.webView.webChromeClient = object : WebChromeClient() {
-            override fun onProgressChanged(
-                view: WebView,
-                newProgress: Int
-            ) {
-                super.onProgressChanged(view, newProgress)
-                binding.progressBar.apply {
-                    progress = newProgress
-                    visibility =
-                        if (newProgress < MAX_PROGRESS) ProgressBar.VISIBLE else ProgressBar.GONE
-                }
-            }
-        }
-    }
-
-    private fun loadUrl(pageUrl: String) {
-        binding.webView.loadUrl(pageUrl)
-    }
 }

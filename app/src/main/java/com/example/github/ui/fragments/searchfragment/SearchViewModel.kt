@@ -36,7 +36,6 @@ class SearchViewModel @Inject constructor(
                     )
                 is Resource.Success -> _repositoriesState.value =
                     RepositoriesState(resource.data!!, isLoading = false)
-
             }
         }.launchIn(viewModelScope)
     }
