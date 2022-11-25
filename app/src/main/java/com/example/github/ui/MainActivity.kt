@@ -29,12 +29,11 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavBar.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.webViewFragment || destination.id == R.id.splashFragment)
+            if (destination.id == R.id.webViewFragment)
                 binding.bottomNavBar.visibility = View.GONE
             else binding.bottomNavBar.visibility = View.VISIBLE
         }
 
     }
-
 
 }
