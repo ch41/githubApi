@@ -10,7 +10,8 @@ import com.example.github.domain.models.Repository
 
 class SearchFragmentAdapter(
     val downloadRepository: (title: String, description: String?, fullName: String, defaultBranch: String) -> Unit,
-    val navigateToWebView: (url: String) -> Unit
+    val navigateToWebView: (url: String) -> Unit,
+    val insertRepository: (id: Int, fullName: String) -> Unit
 ) : ListAdapter<Repository, SearchFragmentAdapter.SearchViewHolder>(SearchDiffUtils()) {
 
 
@@ -25,6 +26,7 @@ class SearchFragmentAdapter(
                 this.entity = repository
                 this.downloadReposButton.setOnClickListener {
                     downloadRepository(name, description, fullName, defaultBranch)
+                    insertRepository(id,fullName)
                 }
                 this.reposCardView.setOnClickListener {
                     navigateToWebView(htmlUrl)

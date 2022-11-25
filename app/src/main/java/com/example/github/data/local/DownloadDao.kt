@@ -12,6 +12,6 @@ interface DownloadDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRepository(downloadEntity: DownloadEntity)
 
-    @Query("select * from downloads_entity")
+    @Query("select * from download_entity")
     suspend fun getAllRepositories() : List<DownloadEntity>
 }

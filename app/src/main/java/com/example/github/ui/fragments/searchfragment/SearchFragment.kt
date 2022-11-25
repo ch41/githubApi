@@ -67,6 +67,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
             navigateToWebView = { url ->
                 val action = SearchFragmentDirections.actionSearchFragmentToWebViewFragment(url)
                 findNavController().navigate(action)
+            },
+            insertRepository = { id, fullName ->
+                viewModel.insertRepository(id, fullName)
             }
         )
         adapter.submitList(repositories)
