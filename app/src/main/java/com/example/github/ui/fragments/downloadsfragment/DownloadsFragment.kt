@@ -1,14 +1,11 @@
 package com.example.github.ui.fragments.downloadsfragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-
-
 import com.example.github.databinding.FragmentDownloadsBinding
 import com.example.github.ui.fragments.basefragment.BaseFragment
 import com.example.github.ui.fragments.downloadsfragment.adapter.DownloadsFragmentAdapter
